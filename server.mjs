@@ -106,7 +106,6 @@ app.post("/product", upload.any(), async (req, res) => {
               try {
                 let response = await newProduct.save();
                 console.log("dessert added", response);
-                prompt("dessert added", response);
 
                 console.log(urlData[0]);
                 res.send({
@@ -156,7 +155,6 @@ app.get("/products", async (req, res) => {
 app.delete("/product/:id",async(req,res) => {
   try {
   let deleted = await productModel.deleteOne({_id: req.params.id}).exec()
-  prompt("product deleted")
   res.send({
     message: "product deleted",
     data: deleted
@@ -179,7 +177,6 @@ app.put("/product/:id",async (req,res) => {
   try{
     let edit = await productModel.findOneAndUpdate({_id:req.params.id},update,{new:true}).exec()
     console.log("updated product",edit)
-    prompt("updated product",edit)
     res.send({
       message:"dessert updated successfully",
       data: edit
