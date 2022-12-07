@@ -48,6 +48,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
+      "https://cake-crud-app.netlify.app",
       "*",
     ],
     credentials: true,
