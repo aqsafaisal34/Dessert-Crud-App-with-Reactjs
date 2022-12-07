@@ -13,7 +13,7 @@ function App() {
    useEffect(() => {
      let getAllProducts = async () => {
        let response = await axios.get(
-         "http://localhost:5001/products"
+         "https://dessert-crud-app-with-reactjs-production.up.railway.app/products"
        );
  
        setProducts(response.data.data);
@@ -37,7 +37,7 @@ function App() {
  
      axios({
        method: "post",
-       url: "http://localhost:5001/product",
+       url: "https://dessert-crud-app-with-reactjs-production.up.railway.app/product",
        data: formData,
        headers: { "Content-Type": "multipart/form-data" },
        withCredentials: true,
@@ -53,7 +53,7 @@ function App() {
 
    let updateHandler = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5001/product/${editProduct?._id}`,
+    axios.put(`https://dessert-crud-app-with-reactjs-production.up.railway.app/product/${editProduct?._id}`,
       {
         dessertName: editProduct.dessertName,
         price: editProduct.price,
@@ -177,7 +177,7 @@ function App() {
                </p>
                <button onClick={() => {
               axios({
-                url: `http://localhost:5001/product/${eachProduct._id}`,
+                url: `https://dessert-crud-app-with-reactjs-production.up.railway.app/product/${eachProduct._id}`,
                 method: "delete",
                 withCredentials: true
               })
